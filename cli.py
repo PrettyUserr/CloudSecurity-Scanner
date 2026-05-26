@@ -1,3 +1,4 @@
+from reporters.html_reporter import generate_html_report
 from checks.s3_public import check_s3_public_access
 from checks.iam_root_keys import check_root_access_keys
 from checks.iam_wildcard_policy import check_wildcard_policies
@@ -48,3 +49,6 @@ print(f"\nScan complete. {len(all_findings)} finding(s) — ", end="")
 criticals = sum(1 for f in all_findings if f.severity == "CRITICAL")
 highs = sum(1 for f in all_findings if f.severity == "HIGH")
 print(f"{criticals} critical, {highs} high.\n")
+
+
+generate_html_report(findings=all_findings, profile=PROFILE)
