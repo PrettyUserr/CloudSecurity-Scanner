@@ -1,0 +1,18 @@
+# Virtual environment
+venv/
+
+# AWS credentials (never commit these)
+.aws/
+*.csv
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# VS Code settings
+.vscode/
+
+# Environment variables
+.env
