@@ -50,4 +50,4 @@ def check_wildcard_policies(profile_name: str) -> list[Finding]:
                         )
                     ))
 
-    return findingsv
+    return findings
