@@ -31,14 +31,17 @@ def check_s3_public_access(profile_name: str) -> list[Finding]:
                     remediation="AWS Console → S3 → your bucket → Permissions → Block Public Access → Edit → enable all four toggles."
                 ))
 
-        except s3.exceptions.NoSuchPublicAccessBlockConfiguration:
-            findings.append(Finding(
-                resource_id=name,
-                resource_type="S3 Bucket",
-                severity="CRITICAL",
-                title="S3 bucket has no public access block at all",
-                description=f"Bucket '{name}' has no Public Access Block configuration. It may be fully open to the internet.",
-                remediation="AWS Console → S3 → your bucket → Permissions → Block Public Access → Edit → enable all four toggles."
-            ))
+        except Exception as e:
+            if "NoSuchPublicAccessBlockConfiguration" in str(e):
+                findings.append(Finding(
+                    resource_id=name,
+                    resource_type="S3 Bucket",
+                    severity="CRITICAL",
+                    title="S3 bucket has no public access block at all",
+                    description=f"Bucket '{name}' has no Public Access Block configuration. It may be fully open to the internet.",
+                    remediation="AWS Console → S3 → your bucket → Permissions → Block Public Access → Edit → enable all four toggles."
+                ))
 
     return findings
+
+  
