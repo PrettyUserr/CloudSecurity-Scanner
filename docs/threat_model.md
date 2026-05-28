@@ -1,4 +1,4 @@
-# Threat Model — Cloud Misconfiguration Scanner
+  Threat Model — Cloud Misconfiguration Scanner
 
 Author: Ibukun Olaniyan
 Date: 26th May, 2025
