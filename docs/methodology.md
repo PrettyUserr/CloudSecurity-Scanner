@@ -6,7 +6,7 @@ Date:27th May 2026
 
 
 <!-- Why Python and boto3? -->
-Python was chosen for readability and the maturity of its AWS SDK. Boto3 is the official AWS SDK maintained by Amazon amg it handles authentication, pagination, and retry logic out of the box. An alternative like Steampipe was considered but rejected because it abstracts too much away from the underlying API calls, which reduces
+Python was chosen for readability and the maturity of its AWS SDK. Boto3 is the official AWS SDK maintained by Amazon and it handles authentication, pagination, and retry logic out of the box. An alternative like Steampipe was considered but rejected because it abstracts too much away from the underlying API calls, which reduces
 learning value and makes the tool harder to extend.
 
 
